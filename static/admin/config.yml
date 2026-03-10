@@ -4,6 +4,7 @@ backend:
   branch: feat/decap-cms-layer
   auth_endpoint: /api/auth
 
+logo_url: /img/AF_vertical_stack.png
 publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img

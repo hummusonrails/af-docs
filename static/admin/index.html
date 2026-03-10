@@ -18,11 +18,17 @@
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       }
 
-      [data-testid="login-page"] {
+      #nc-root > section {
         background: var(--arb-dark) !important;
       }
 
-      [data-testid="login-page"] button {
+      #nc-root > section > span > img {
+        max-width: 200px !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+
+      #nc-root > section button {
         background: var(--arb-blue) !important;
         color: #fff !important;
         border: none !important;
@@ -33,22 +39,8 @@
         transition: opacity 0.2s !important;
       }
 
-      [data-testid="login-page"] button:hover {
+      #nc-root > section button:hover {
         opacity: 0.9 !important;
-      }
-
-      [data-testid="login-page"] img,
-      [data-testid="login-page"] svg {
-        display: none !important;
-      }
-
-      [data-testid="login-page"]::before {
-        content: "";
-        display: block;
-        width: 180px;
-        height: 200px;
-        background: url("/img/AF_vertical_stack.png") no-repeat center / contain;
-        margin: 0 auto 24px;
       }
 
       header {
