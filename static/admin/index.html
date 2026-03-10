@@ -5,6 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Arbitrum Governance Docs CMS</title>
+    <link rel="icon" href="/img/favicon.ico" />
+    <style>
+      :root {
+        --arb-blue: #12AAFF;
+        --arb-dark: #213147;
+        --arb-light-blue: #9DCCED;
+        --arb-link: #007bdd;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+
+      [data-testid="login-page"] {
+        background: var(--arb-dark) !important;
+      }
+
+      [data-testid="login-page"] button {
+        background: var(--arb-blue) !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 2px !important;
+        font-weight: 600 !important;
+        padding: 12px 32px !important;
+        font-size: 15px !important;
+        transition: opacity 0.2s !important;
+      }
+
+      [data-testid="login-page"] button:hover {
+        opacity: 0.9 !important;
+      }
+
+      [data-testid="login-page"]::before {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        background: url("/img/logo.svg") no-repeat center / contain;
+        margin: 0 auto 16px;
+      }
+
+      [data-testid="login-page"]::after {
+        content: "Arbitrum DAO - Governance Docs";
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: -60px;
+        margin-bottom: 40px;
+      }
+
+      header {
+        background: var(--arb-dark) !important;
+      }
+
+      header a {
+        color: #fff !important;
+      }
+
+      header [class*="AppHeader"] {
+        background: var(--arb-dark) !important;
+      }
+
+      [class*="ToolbarButton"]:not([class*="Published"]) {
+        color: var(--arb-dark) !important;
+      }
+
+      a[href="#/collections"],
+      a[href="#/workflow"],
+      a[href="#/media"] {
+        color: var(--arb-light-blue) !important;
+        font-weight: 600 !important;
+      }
+
+      a[href="#/collections"]:hover,
+      a[href="#/workflow"]:hover,
+      a[href="#/media"]:hover {
+        color: #fff !important;
+      }
+
+      [class*="SidebarNavList"] a {
+        color: var(--arb-dark) !important;
+      }
+
+      [class*="SidebarNavList"] a:hover,
+      [class*="SidebarNavList"] a[class*="active"] {
+        color: var(--arb-blue) !important;
+        font-weight: 600 !important;
+      }
+
+      button[class*="PublishButton"],
+      button[class*="ToolbarButton"] {
+        background: var(--arb-blue) !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 2px !important;
+      }
+
+      button[class*="SaveButton"],
+      button[class*="PublishButton"]:hover {
+        opacity: 0.9 !important;
+      }
+
+      [class*="EntryListing"] a {
+        border-left: 3px solid transparent !important;
+      }
+
+      [class*="EntryListing"] a:hover {
+        border-left-color: var(--arb-blue) !important;
+      }
+
+      [class*="SearchInput"] {
+        border-radius: 2px !important;
+      }
+
+      [class*="SearchInput"]:focus {
+        border-color: var(--arb-blue) !important;
+      }
+    </style>
     <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   </head>
   <body>
