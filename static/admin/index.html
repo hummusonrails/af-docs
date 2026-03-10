@@ -37,24 +37,18 @@
         opacity: 0.9 !important;
       }
 
+      [data-testid="login-page"] img,
+      [data-testid="login-page"] svg {
+        display: none !important;
+      }
+
       [data-testid="login-page"]::before {
         content: "";
         display: block;
-        width: 80px;
-        height: 80px;
-        background: url("/img/logo.svg") no-repeat center / contain;
-        margin: 0 auto 16px;
-      }
-
-      [data-testid="login-page"]::after {
-        content: "Arbitrum DAO - Governance Docs";
-        display: block;
-        color: #fff;
-        font-size: 20px;
-        font-weight: 600;
-        text-align: center;
-        margin-top: -60px;
-        margin-bottom: 40px;
+        width: 180px;
+        height: 200px;
+        background: url("/img/AF_vertical_stack.png") no-repeat center / contain;
+        margin: 0 auto 24px;
       }
 
       header {
