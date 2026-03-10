@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Arbitrum Governance Docs CMS</title>
+    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   </head>
   <body>
+    <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      fetch("/admin/config.yml")
+        .then(function(r) { return r.text(); })
+        .then(function(yml) {
+          var config = window.jsyaml.load(yml);
+          config.backend.base_url = window.location.origin;
+          window.CMS.init({ config: config });
+        });
+    </script>
   </body>
 </html>

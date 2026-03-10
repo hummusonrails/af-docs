@@ -2,7 +2,6 @@ backend:
   name: github
   repo: ArbitrumFoundation/docs
   branch: main
-  base_url: https://docs.arbitrum.foundation
   auth_endpoint: /api/auth
 
 publish_mode: editorial_workflow
