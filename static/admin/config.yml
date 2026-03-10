@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ArbitrumFoundation/docs
+  repo: hummusonrails/af-docs
   branch: main
   auth_endpoint: /api/auth
 
