@@ -130,6 +130,7 @@
         .then(function(yml) {
           var config = window.jsyaml.load(yml);
           config.backend.base_url = window.location.origin;
+          config.load_config_file = false;
           window.CMS.init({ config: config });
         });
     </script>
