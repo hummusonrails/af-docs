@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: hummusonrails/af-docs
-  branch: main
+  branch: feat/decap-cms-layer
   auth_endpoint: /api/auth
 
 publish_mode: editorial_workflow
@@ -15,8 +15,6 @@ collections:
     create: true
     extension: md
     slug: "{{slug}}"
-    filter:
-      field: id
     fields:
       - { name: id, label: ID, widget: string }
       - { name: title, label: Title, widget: string }
