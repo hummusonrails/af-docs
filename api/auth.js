@@ -1,5 +1,5 @@
 const GITHUB_AUTH_URL = "https://github.com/login/oauth/authorize";
-const scopes = "repo,user";
+const scopes = "public_repo";
 
 module.exports = (req, res) => {
   const clientId = process.env.GITHUB_OAUTH_CLIENT_ID;
