@@ -82,3 +82,37 @@ collections:
       - { name: sidebar_label, label: Sidebar Label, widget: string, required: false }
       - { name: description, label: Description, widget: text, required: false }
       - { name: body, label: Body, widget: markdown }
+
+  - name: partials
+    label: Shared Content (Partials)
+    description: >-
+      Reusable content imported into multiple pages (FAQs, Glossary, etc.).
+      Editing a partial updates every page that imports it. Raw-markdown mode
+      is enforced because these files contain HTML and MDX heading anchors
+      that the rich-text editor can mangle on save.
+    files:
+      - name: faq
+        label: FAQs
+        file: docs/partials/_faq-partial.md
+        fields:
+          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+      - name: glossary
+        label: Glossary
+        file: docs/partials/_glossary-partial.md
+        fields:
+          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+      - name: draft-expectations
+        label: Draft / Public Preview Notice
+        file: docs/partials/_draft-expectations-partial.md
+        fields:
+          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+      - name: anatomy-aip
+        label: Anatomy of an AIP
+        file: docs/partials/_anatomy-aip-partial.md
+        fields:
+          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+      - name: constitution-content
+        label: Constitution Content
+        file: docs/partials/_constitution-content-partial.md
+        fields:
+          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
