@@ -117,6 +117,73 @@
     <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+      // Styled preview pane — makes the right side of the editor look like
+      // the published Docusaurus page rather than a raw text dump.
+      window.CMS.registerPreviewStyle("/admin/preview.css");
+
+      // Custom preview template for long-form doc pages: renders title as an
+      // H1, shows description / author / SME as a small metadata header, then
+      // the body. Mirrors how readers actually see the page on the site.
+      var DocPreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var data = entry.get("data");
+          var title = data.get("title");
+          var description = data.get("description");
+          var author = data.get("dao_author");
+          var sme = data.get("dao_sme");
+          var bodyMarkdown = data.get("body") || "";
+          var bodyWidget = this.props.widgetFor("body");
+
+          var metaRows = [];
+          if (author) {
+            metaRows.push(h("span", { className: "preview-meta-row", key: "a" },
+              h("strong", null, "Author:"), " ", author));
+          }
+          if (sme) {
+            metaRows.push(h("span", { className: "preview-meta-row", key: "s" },
+              h("strong", null, "Subject Matter Expert:"), " ", sme));
+          }
+
+          // Detect wrapper pages (body is mostly `import` / `<XPartial />`)
+          // and surface a friendly hint in the preview rather than showing
+          // raw import statements.
+          var trimmed = String(bodyMarkdown).trim();
+          var nonEmptyLines = trimmed.split("\n").filter(function (l) {
+            return l.trim().length > 0;
+          });
+          var wrapperLines = nonEmptyLines.filter(function (l) {
+            return /^(import\s|<[A-Z][a-zA-Z]*Partial|export\s+const\s+toc)/.test(l.trim());
+          });
+          var isWrapper = nonEmptyLines.length > 0 &&
+            wrapperLines.length === nonEmptyLines.length;
+
+          var bodyContent;
+          if (isWrapper) {
+            bodyContent = h("div", { className: "preview-empty-hint" },
+              h("strong", null, "This is a wrapper page."), " ",
+              "The content readers see comes from a shared partial. ",
+              "To edit what appears on the published page, go to ",
+              h("strong", null, "Shared Content (Partials)"),
+              " in the left sidebar.");
+          } else {
+            bodyContent = bodyWidget;
+          }
+
+          return h("article", { className: "markdown" },
+            title ? h("h1", null, title) : null,
+            description ? h("p", { className: "preview-description" }, description) : null,
+            metaRows.length > 0 ? h("div", { className: "preview-meta" }, metaRows) : null,
+            bodyContent
+          );
+        }
+      });
+
+      ["governance-pages", "how-tos", "concepts", "bold-economics",
+       "foundational-documents"].forEach(function (name) {
+        window.CMS.registerPreviewTemplate(name, DocPreview);
+      });
+
       fetch("/admin/config.yml")
         .then(function(r) { return r.text(); })
         .then(function(yml) {
