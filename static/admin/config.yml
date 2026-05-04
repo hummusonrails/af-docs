@@ -12,18 +12,53 @@ public_folder: /img
 collections:
   - name: governance-pages
     label: Governance Pages
+    description: >-
+      Top-level governance documentation pages. A few entries here (FAQs,
+      Glossary, Constitution) are "wrapper" pages whose body only contains
+      import statements — their real content lives in "Shared Content
+      (Partials)" further down the sidebar. If you open a page and the body
+      shows only `import` lines, go edit it in Partials instead.
     folder: docs
     create: true
     extension: md
     slug: "{{slug}}"
     fields:
-      - { name: id, label: ID, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_label, label: Sidebar Label, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: dao_author, label: Author, widget: string, required: false }
-      - { name: dao_sme, label: Subject Matter Expert, widget: string, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: id
+        label: Page ID (URL slug)
+        widget: string
+        hint: >-
+          Used as the URL for this page. Avoid changing on existing pages —
+          it will break inbound links from forum posts, social media, and
+          other docs.
+      - name: title
+        label: Title
+        widget: string
+        hint: Shown as the main heading at the top of the page and in the browser tab.
+      - name: sidebar_label
+        label: Sidebar Label
+        widget: string
+        hint: Shorter version shown in the left navigation. Often the same as Title.
+      - name: description
+        label: Description
+        widget: text
+        hint: One-sentence summary used by search engines and link previews when this page is shared.
+      - name: dao_author
+        label: Author
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: dao_sme
+        label: Subject Matter Expert
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: body
+        label: Body
+        widget: markdown
+        hint: >-
+          The main content of the page. If you only see `import` lines and
+          `<XPartial />` tags here, this is a wrapper page — edit the real
+          content in "Shared Content (Partials)" instead.
 
   - name: how-tos
     label: How-to Guides
@@ -32,13 +67,38 @@ collections:
     extension: md
     slug: "{{slug}}"
     fields:
-      - { name: id, label: ID, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_label, label: Sidebar Label, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: dao_author, label: Author, widget: string, required: false }
-      - { name: dao_sme, label: Subject Matter Expert, widget: string, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: id
+        label: Page ID (URL slug)
+        widget: string
+        hint: >-
+          Used as the URL for this page. Avoid changing on existing pages —
+          it will break inbound links.
+      - name: title
+        label: Title
+        widget: string
+        hint: Shown as the main heading at the top of the page and in the browser tab.
+      - name: sidebar_label
+        label: Sidebar Label
+        widget: string
+        hint: Shorter version shown in the left navigation. Often the same as Title.
+      - name: description
+        label: Description
+        widget: text
+        hint: One-sentence summary used by search engines and link previews.
+      - name: dao_author
+        label: Author
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: dao_sme
+        label: Subject Matter Expert
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: body
+        label: Body
+        widget: markdown
+        hint: The main content of the guide.
 
   - name: concepts
     label: Governance Concepts
@@ -47,13 +107,38 @@ collections:
     extension: md
     slug: "{{slug}}"
     fields:
-      - { name: id, label: ID, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_label, label: Sidebar Label, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: dao_author, label: Author, widget: string, required: false }
-      - { name: dao_sme, label: Subject Matter Expert, widget: string, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: id
+        label: Page ID (URL slug)
+        widget: string
+        hint: >-
+          Used as the URL for this page. Avoid changing on existing pages —
+          it will break inbound links.
+      - name: title
+        label: Title
+        widget: string
+        hint: Shown as the main heading at the top of the page and in the browser tab.
+      - name: sidebar_label
+        label: Sidebar Label
+        widget: string
+        hint: Shorter version shown in the left navigation. Often the same as Title.
+      - name: description
+        label: Description
+        widget: text
+        hint: One-sentence summary used by search engines and link previews.
+      - name: dao_author
+        label: Author
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: dao_sme
+        label: Subject Matter Expert
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: body
+        label: Body
+        widget: markdown
+        hint: The main content of the concept page.
 
   - name: bold-economics
     label: BoLD Economics Guides
@@ -62,13 +147,38 @@ collections:
     extension: md
     slug: "{{slug}}"
     fields:
-      - { name: id, label: ID, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_label, label: Sidebar Label, widget: string }
-      - { name: description, label: Description, widget: text }
-      - { name: dao_author, label: Author, widget: string, required: false }
-      - { name: dao_sme, label: Subject Matter Expert, widget: string, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: id
+        label: Page ID (URL slug)
+        widget: string
+        hint: >-
+          Used as the URL for this page. Avoid changing on existing pages —
+          it will break inbound links.
+      - name: title
+        label: Title
+        widget: string
+        hint: Shown as the main heading at the top of the page and in the browser tab.
+      - name: sidebar_label
+        label: Sidebar Label
+        widget: string
+        hint: Shorter version shown in the left navigation. Often the same as Title.
+      - name: description
+        label: Description
+        widget: text
+        hint: One-sentence summary used by search engines and link previews.
+      - name: dao_author
+        label: Author
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: dao_sme
+        label: Subject Matter Expert
+        widget: string
+        required: false
+        hint: Optional. Shown at the top of the published page.
+      - name: body
+        label: Body
+        widget: markdown
+        hint: The main content of the guide.
 
   - name: foundational-documents
     label: Foundational Documents
@@ -77,11 +187,30 @@ collections:
     extension: md
     slug: "{{slug}}"
     fields:
-      - { name: id, label: ID, widget: string }
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_label, label: Sidebar Label, widget: string, required: false }
-      - { name: description, label: Description, widget: text, required: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: id
+        label: Page ID (URL slug)
+        widget: string
+        hint: >-
+          Used as the URL for this page. Avoid changing on existing pages —
+          it will break inbound links.
+      - name: title
+        label: Title
+        widget: string
+        hint: Shown as the main heading at the top of the page and in the browser tab.
+      - name: sidebar_label
+        label: Sidebar Label
+        widget: string
+        required: false
+        hint: Shorter version shown in the left navigation. Optional — defaults to Title.
+      - name: description
+        label: Description
+        widget: text
+        required: false
+        hint: One-sentence summary used by search engines and link previews.
+      - name: body
+        label: Body
+        widget: markdown
+        hint: The main content of the document.
 
   - name: partials
     label: Shared Content (Partials)
@@ -95,24 +224,96 @@ collections:
         label: FAQs
         file: docs/partials/_faq-partial.md
         fields:
-          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+          - name: body
+            label: Body
+            widget: markdown
+            modes: ["raw"]
+            hint: Edits here update every page that imports FAQs.
       - name: glossary
         label: Glossary
         file: docs/partials/_glossary-partial.md
         fields:
-          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+          - name: body
+            label: Body
+            widget: markdown
+            modes: ["raw"]
+            hint: Edits here update every page that imports the Glossary.
       - name: draft-expectations
         label: Draft / Public Preview Notice
         file: docs/partials/_draft-expectations-partial.md
         fields:
-          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+          - name: body
+            label: Body
+            widget: markdown
+            modes: ["raw"]
+            hint: The yellow "PUBLIC PREVIEW DOCUMENT" notice that appears at the top of many pages.
       - name: anatomy-aip
         label: Anatomy of an AIP
         file: docs/partials/_anatomy-aip-partial.md
         fields:
-          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+          - name: body
+            label: Body
+            widget: markdown
+            modes: ["raw"]
+            hint: The list of recommended AIP sections (Abstract, Motivation, Rationale, etc.).
       - name: constitution-content
         label: Constitution Content
         file: docs/partials/_constitution-content-partial.md
         fields:
-          - { name: body, label: Body, widget: markdown, modes: ["raw"] }
+          - name: body
+            label: Body
+            widget: markdown
+            modes: ["raw"]
+            hint: The full text of the DAO Constitution. Changes here change the published Constitution.
+
+  - name: page-wrappers
+    label: Page Wrappers (Advanced)
+    description: >-
+      ⚠️ ADVANCED — most editors should not touch this section. These pages
+      are thin wrappers that pull shared content in from "Shared Content
+      (Partials)". To edit what readers see on the FAQs or Glossary pages,
+      go to "Shared Content (Partials)" instead. Only edit here if you need
+      to change the page title, description, or which partial is imported.
+    files:
+      - name: dao-faqs-wrapper
+        label: FAQs page (wrapper)
+        file: docs/dao-faqs.md
+        fields:
+          - { name: id, label: Page ID (URL slug), widget: string }
+          - { name: title, label: Title, widget: string }
+          - { name: sidebar_label, label: Sidebar Label, widget: string }
+          - { name: description, label: Description, widget: text }
+          - name: toc_min_heading_level
+            label: TOC Min Heading Level
+            widget: number
+            required: false
+            hint: Controls which heading levels appear in the right-hand table of contents.
+          - name: body
+            label: Body (wrapper code)
+            widget: markdown
+            modes: ["raw"]
+            hint: >-
+              ⚠️ This is wrapper code, not editable prose. Editing here can
+              break the page. To change the FAQ content readers see, go to
+              "Shared Content (Partials)" → "FAQs".
+      - name: dao-glossary-wrapper
+        label: Glossary page (wrapper)
+        file: docs/dao-glossary.md
+        fields:
+          - { name: id, label: Page ID (URL slug), widget: string }
+          - { name: title, label: Title, widget: string }
+          - { name: sidebar_label, label: Sidebar Label, widget: string }
+          - { name: description, label: Description, widget: text }
+          - name: toc_min_heading_level
+            label: TOC Min Heading Level
+            widget: number
+            required: false
+            hint: Controls which heading levels appear in the right-hand table of contents.
+          - name: body
+            label: Body (wrapper code)
+            widget: markdown
+            modes: ["raw"]
+            hint: >-
+              ⚠️ This is wrapper code, not editable prose. Editing here can
+              break the page. To change the Glossary content readers see, go
+              to "Shared Content (Partials)" → "Glossary".
