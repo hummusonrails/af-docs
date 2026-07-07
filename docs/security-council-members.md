@@ -8,7 +8,7 @@ dao_sme: dzgoldman
 ---
 The following are the current members of the Security Council; for information about the Security Council, see ["Security Council Overview"](./concepts/security-council).
 
-i. September Cohort
+i. September Cohort 
 
 1. [gzeon](https://x.com/gzeon) is a smart contract engineer at Offchain and a leaderboard warden and judge at Code4rena. gzeon has developed and maintained major components of the Arbitrum smart contract codebase and has contributed to resolving critical blockchain security incidents.
 
