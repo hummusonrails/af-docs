@@ -127,7 +127,7 @@
 
 <p></p>
 
-<p> <a href="/dao-glossary#nonemergency-action">Non-emergency action</a>s are routine actions taken by the Security Council, such as software upgrades and maintenance. They require signatures from 9 of 12 Security Council members. They take effect after a delay of at least 13 days, ensuring users can withdraw their funds prior to execution.</p>
+<p> <a href="/dao-glossary#nonemergency-action">Non-emergency action</a>s are routine actions taken by the Security Council, such as software upgrades and maintenance. They require signatures from 9 of 12 Security Council members. They take effect after a delay of at least 18 days, ensuring users can withdraw their funds prior to execution.</p>
 
 <p>Information about non-emergency actions is to be provided by the Security Council prior to the action being submitted on chain.</p>
 
@@ -147,7 +147,7 @@
 ## Governance proposals
 
 ### How are AIPs created and voted on? {#how-are-aips-created-and-voted-on}
-<p><a href="/dao-glossary#arbitrum-improvement-proposal-aip">Arbitrum Improvement Proposal (AIP)</a>s are created by suggesting them on the <a href="/dao-glossary#arbitrum-dao-governance-forum">ArbitrumDAO governance forum</a> and discussing/debating them for 1 week. AIPs should be accompanied by a <a href="/dao-glossary#snapshot-poll">Snapshot poll</a>, which can only be submitted by an address that can vote at least 0.01% of the <a href="/dao-glossary#votable-tokens">Votable tokens</a>. If an AIP receives sufficient support, it moves on to a voting process, where holders of votable tokens (or the delegates that those holders have delegated their tokens' voting power to) can formally vote on the proposal.</p>
+<p><a href="/dao-glossary#arbitrum-improvement-proposal-aip">Arbitrum Improvement Proposal (AIP)</a>s are created by suggesting them on the <a href="/dao-glossary#arbitrum-dao-governance-forum">ArbitrumDAO governance forum</a> and discussing/debating them for 1 week. AIPs should be accompanied by an <a href="/dao-glossary#offchain-governance-ui">off-chain vote</a>, e.g. a temperature check on Snapshot, which can only be submitted by an address with at least 500,000 <a href="/dao-glossary#votable-tokens">Votable tokens</a>. If an AIP receives sufficient support at this stage, it moves on to an on-chain voting process, where holders of votable tokens (or the delegates that those holders have delegated their tokens' voting power to) can formally vote on the proposal.</p>
 
 ### What are the requirements for submitting a proposal? {#what-are-the-requirements-for-submitting-a-proposal}
 <p>Proposal can be submitted by a <a href="/dao-glossary#delegate">Delegate</a> who meets the proposal threshold of 1 million votes; this requirement exists to mitigate spam.</p>
@@ -157,12 +157,13 @@
 
 
 ### What determines the "quorum" (minimum votes required) for a governance proposal? {#what-determines-the-quorum-minimum-votes-required-for-a-governance-proposal}
-<p>A <a href="/dao-glossary#core-governor">Core Governor</a> requires participation of 5% of the votable tokens; the <a href="/dao-glossary#treasury-governor">Treasury Governor</a> requires 3%. "Votable tokens" here refers to the total $ARB supply, excluding tokens delegated to the <a href="/dao-glossary#exclude-address">Exclude Address</a>.  </p>
+<p>A proposal submitted to the <a href="/dao-glossary#core-governor">Core Governor</a> contract requires 50% of delegated tokens to vote ‘For’ and/or ‘Abstain’ (within the range of 150m to 450m $ARB); and one submitted to the <a href="/dao-glossary#treasury-governor">Treasury Governor</a> requires 40% of delegated tokens tokens (within the range of 100m to 300m $ARB) to vote ‘For’ and/or ‘Abstain’. "Delegated tokens" represents the total amount of $ARB participating in governance and available for voting.
+</p>
 
 
 
 ### Why is there a delay between a proposal "passing" (getting enough votes) and actually taking effect? Why can't it take effect right away?  {#why-is-there-a-delay-between-a-proposal-passing-getting-enough-votes-and-actually-taking-effect-why-cant-it-take-effect-right-away-}
-<p>For <a href="/dao-glossary#core-governor">Core Governor</a> proposals, the delay (at least 13 days) after the voting period end exists to ensure that even after a proposal passes, users have an opportunity to withdraw their funds before the proposal takes effect.</p>
+<p>For <a href="/dao-glossary#core-governor">Core Governor</a> proposals, the delay (at least 18 days) after the voting period ends exists to ensure that even after a proposal passes, users have an opportunity to withdraw their funds before the proposal takes effect.</p>
 
 <p></p>
 
@@ -176,16 +177,16 @@
 
 
 ### Where can I see a list of all ArbitrumDAO governance proposals? {#where-can-i-see-a-list-of-all-arbitrum-dao-governance-proposals}
-<p>Visit the Tally governance page! <br />
-<a href="https://www.tally.xyz/gov/arbitrum">https://www.tally.xyz/gov/arbitrum</a></p>
+<p>Visit the on-chain governance UI!<br />
+<a href="https://alt.gov.arbitrum.foundation/proposals">https://alt.gov.arbitrum.foundation/proposals</a></p>
 
 ## Delegation
 
 ### Are there any monetary incentives for being a delegate? {#are-there-any-monetary-incentives-for-being-a-delegate}
-<p>Nope, just the great feeling of representing the ArbitrumDAO. 😊</p>
+<p>Generally no, but it depends. It’s worth checking whether there is an active Delegate Incentive Program being run by the DAO, and whether you would qualify.</p>
 
 ### How do I assign my voting power to a delegate? {#how-do-i-assign-my-voting-power-to-a-delegate}
-<p>Visit <a href="https://www.tally.xyz/gov/arbitrum/delegates">this page</a>, find the delegate you want to have to represent you, and follow the prompts! <a href="https://forum.arbitrum.io/login">https://forum.arbitrum.io/login</a></p>
+<p>Visit <a href="https://alt.gov.arbitrum.foundation/delegates/my-delegation">this page</a>, find the delegate you want to have to represent you, and follow the prompts!
 
 ### What are the requirements for being a delegate? {#what-are-the-requirements-for-being-a-delegate}
 <p>There are none (technically)! You just have to own <a href="/dao-glossary#arb">$ARB</a> and/or appeal to the community on why they should choose you to represent them when voting on proposals in governance.</p>
@@ -196,7 +197,7 @@
 
 
 ### Can I delegate my voting power to more than one delegate? {#can-i-delegate-my-voting-power-to-more-than-one-delegate}
-<p>Yes; voting power can be split between any number of delegates.</p>
+<p>No; each address can delegate its voting power to one delegate.</p>
 
 
 
