@@ -238,13 +238,13 @@ In other words, for non-constitutional proposals, quorum is 40% of total DVP, bu
 ### Smart contract {#smart-contract}
 <p>Self-executing code that's stored and executed on the Ethereum blockchain - either on <a href="/dao-glossary#layer-1-l1">Layer 1 (L1)</a> or <a href="/dao-glossary#layer-2-l2">Layer 2 (L2)</a>. Smart contracts let you automate tasks and protocols in a <a href="/dao-glossary#trustless">Trustless</a> manner. The <a href="/dao-glossary#arbitrum-dao">ArbitrumDAO</a> uses smart contracts to trustlessly implement the protocol defined by <a href="/dao-glossary#the-constitution-of-the-arbitrum-dao">The Constitution of the ArbitrumDAO</a>.</p>
 
-### Off-chain Governance UI  {#off-chain-governance-ui}
+### Off-chain Governance UI  {#offchain-governance-ui}
 <p>Web interface that can be used to raise off-chain proposals and cast off-chain votes; typically used for temperature checks in conjunction with the ArbitrumDAO governance forum.</p>
 
 ### Standard Token gateway {#standard-token-gateway}
 <p>A series of smart contracts responsible for bridging ERC20 tokens on Ethereum to Arbitrum chains like <a href="/dao-glossary#arbitrum-one">Arbitrum One</a> or <a href="/dao-glossary#arbitrum-nova">Arbitrum Nova</a> and back.  The standard gateway keeps the L1 token escrowed on Ethereum and mints/burns the L2 token representation upon deposits/withdrawals. </p>
 
-### On-chain Governance UI {#on-chain-governance-ui}
+### On-chain Governance UI {#onchain-governance-ui}
 <p>Web interface that can be used to interact with Arbitrum Governance contracts, including viewing, submitting, and voting on <a href="/dao-glossary#governance-proposal">Governance proposals</a>:
 
 <ul><li><a href="https://alt.gov.arbitrum.foundation/">Primary governance UI</a> (maintained by Offchain)</a>
