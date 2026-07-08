@@ -96,10 +96,10 @@
 <p>Facilitates <a href="/dao-glossary#smart-contract">Smart contract</a> logic and execution for Ethereum's <a href="/dao-glossary#layer-1-l1">Layer 1 (L1)</a>  network. Powered by execution-layer clients like <a href="/dao-glossary#geth">Geth</a>, Nethermind, and Besu.</p>
 
 ### Exclude Address {#exclude-address}
-<p>Special address (<a href="https://arbiscan.io/address/0x00000000000000000000000000000000000a4b86">0x00000000000000000000000000000000000a4b86</a>) that ARB holders can delegates can their votes to so-as not to be included in proposals' quorum calculation. Notable, the ArbitrumDAO treasury has its votes excluded.</p>
+<p>Special address (<a href="https://arbiscan.io/address/0x00000000000000000000000000000000000a4b86">0x00000000000000000000000000000000000a4b86</a>) that ARB holders can delegate their votes to, so not to be included in qualification threshold calculation in the Nominee Selection phase of the Security Council election process. Notably, the Arbitrum DAO treasury has its votes excluded.</p>
 
 ### Foundation Vesting Wallet {#foundation-vesting-wallet}
-<p>Smart contract wallet that stores the <a href="/dao-glossary#the-arbitrum-foundation">The Arbitrum Foundation</a>'s tokens; tokens vest linearly over the course of 4 years, as specified [AIP 1.1](<a href="https://www.tally.xyz/gov/arbitrum/proposal/70545629960586317780628692755032548222173912190231545322320044688071893662480">https://www.tally.xyz/gov/arbitrum/proposal/70545629960586317780628692755032548222173912190231545322320044688071893662480</a>)</p>
+<p>Smart contract wallet that stores the <a href="/dao-glossary#the-arbitrum-foundation">The Arbitrum Foundation</a>'s tokens; tokens vest linearly over the course of 4 years, as specified [AIP 1.1](<a href="https://alt.gov.arbitrum.foundation/proposal/70545629960586317780628692755032548222173912190231545322320044688071893662480">https://alt.gov.arbitrum.foundation/proposal/70545629960586317780628692755032548222173912190231545322320044688071893662480</a>)</p>
 
 ### Geth {#geth}
 <p>An execution-layer client that defines the Ethereum state transition function and handles network-layer logic like transaction memory pooling. <a href="/dao-glossary#arbitrum-nitro">Arbitrum Nitro</a> utilizes a fork of Geth to implement Arbitrum's state transition function.</p>
@@ -190,7 +190,22 @@ The client software implements a protocol that stores transaction history within
 <p>A consensus-layer client that powers Ethereum <a href="/dao-glossary#layer-1-l1">Layer 1 (L1)</a>. Originally created by Prysmatic Labs; acquired by Offchain in 2022.</p>
 
 ### Quorum {#quorum}
-<p>Minimum votes required for a <a href="/dao-glossary#governance-proposal">Governance proposal</a> to pass. For each governor's proposals, the quorum is a percentage of the non-excluded votes at the time that voting on the proposal begins (4.5% for the <a href="/dao-glossary#core-governor">Core Governor</a> and 3% for the <a href="/dao-glossary#treasury-governor">Treasury Governor</a>.</p>
+<p>Minimum ‘For’ and/or ‘Abstain’ votes required for a <a href="/dao-glossary#governance-proposal">Governance proposal</a> to pass. For each governor's proposals, the quorum is a fixed percentage of the total Delegated Voting Power (DVP). Furthermore, there are fixed lower and upper bound quorum thresholds to ensure that quorum remains robust yet achievable.
+
+Quorum = min{max quorum, max{ɑ*DVP, baseline quorum}} where ɑ, baseline quorum, and max quorum are constants.
+
+#### For constitutional proposals:
+<ul><li>{ɑ = 0.5; baseline quorum = 150m ARB; max quorum = 450m ARB}
+</li>
+</ul>
+In other words, for constitutional proposals, quorum is 50% of total DVP, but cannot be less than 150m $ARB nor more than 450m $ARB.
+
+#### For non-constitutional proposals:
+
+<ul><li>{ɑ = 0.4; baseline quorum = 100m $ARB; max quorum = 300m $ARB}
+</li>
+</ul>
+In other words, for non-constitutional proposals, quorum is 40% of total DVP, but cannot be less than 100m $ARB nor more than 300m $ARB. To learn more about quorum, refer to the <a href="/dao-glossary#the-constitution-of-the-arbitrum-dao">The Constitution of the ArbitrumDAO</a>.</p>
 
 ### Security Council {#security-council}
 <p>A 12-member council of entities who hold the private keys to a 12-member <a href="/dao-glossary#multisignature-wallet">Multisignature wallet</a>. Members of the council use this wallet to perform <a href="/dao-glossary#emergency-action">Emergency action</a>s and <a href="/dao-glossary#nonemergency-action">Non-emergency action</a>s.</p>
@@ -236,7 +251,7 @@ The client software implements a protocol that stores transaction history within
 </li>
 <li><a href="https://snapshot.box/#/org/arbitrum">Backup governance UI</a> (maintained by Snapshot)</a></li>
 </ul>
-<p><br />
+
 
 ### The Arbitrum Foundation {#the-arbitrum-foundation}
 <p>A legal entity that is governed by the <a href="/dao-glossary#arbitrum-dao">ArbitrumDAO</a>. Is bound to the rules articulated within <a href="/dao-glossary#the-constitution-of-the-arbitrum-dao">The Constitution of the ArbitrumDAO</a>.</p>
@@ -283,7 +298,7 @@ This is achieved through the use of cryptographic techniques and decentralized c
 </li>
 <li>tokens delegated to the <a href="https://arbiscan.io/address/0x00000000000000000000000000000000000a4b86">exclude address</a></li>
 </ul>
-<p><br />
+
 Votable tokens give their holders voting power in direct proportion to the quantity of tokens held. More $ARB == more voting power.</p>
 
 
