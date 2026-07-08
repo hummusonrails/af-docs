@@ -2,9 +2,9 @@
 id: create-submit-dao-proposal
 title: How to submit a DAO proposal
 sidebar_label: Submit a DAO proposal
-description: Learn how to submit a proposal to the Arbitrum DAO's governance
-  forum by using Snapshot to conduct a temperature check, and then Tally to
-  facilitate an on-chain vote.
+description: Learn how to submit a proposal to the ArbitrumDAO's governance
+  forum by using Snapshot to conduct a temperature check, and then the on-chain
+  governance UI to facilitate an on-chain vote.
 dao_author: amarrazza
 dao_sme: amarrazza
 ---
@@ -16,7 +16,7 @@ In this how-to, you'll learn how to submit an Arbitrum Improvement Proposal (AIP
 
 ### Prerequisites
 
-To submit a temperature check using a <a data-quicklook-from='snapshot-poll'>Snapshot poll</a>, you must have an Ethereum wallet address with 500,000 votable tokens[^1]; to submit a proposal on-chain using [Tally](https://tally.xyz/gov/arbitrum), you must have an Ethereum wallet address that represents at least 1,000,000 votable tokens. 
+To submit a [temperature check](https://snapshot.org/#/s:arbitrumfoundation.eth) using a <a data-quicklook-from='snapshot-poll'>Snapshot poll</a>, you must have an Ethereum wallet address with 500,000 votable tokens[^1]; to submit a proposal on-chain using the [on-chain governance UI](https://alt.gov.arbitrum.foundation/), you must have an Ethereum wallet address that represents at least 1,000,000 votable tokens. 
 
 If you don't have enough voting power, consider delegating your votes to a delegate who can create a proposal on your behalf[^2].
 
@@ -39,7 +39,7 @@ import AnatomyAIPPartial from '@site/docs/partials/_anatomy-aip-partial.md';
 
 Proposals that require code changes should include the code that will be executed when the proposal is passed. This code should handle the data structures, logic, executable data, and execution of the proposal. Refer to [Governance Proposal Lifecycle: Example](https://github.com/ArbitrumFoundation/governance/blob/main/docs/proposal_lifecycle_example.md) for an example.
 
-### Step 1: Conduct a formal temperature check with a Snapshot poll
+### Step 1: Conduct a formal temperature check with the off-chain governance UI
 
 The [DAO governance forum](https://forum.arbitrum.foundation/) facilitates discussions about Arbitrum DAO and <a data-quicklook-from='governance-proposal'>governance proposals</a> that are submitted by eligible token delegates. To submit your proposal:
 
@@ -57,11 +57,11 @@ If your proposal doesn't pass the temperature check, you shouldn't submit it for
 
 If your proposal passes the temperature check, then you can move to the second and final step: an on-chain vote facilitated by Tally. Ensure that you've incorporated feedback brought up during relevant forum discussions and temperature checks before proceeding. 
 
-### Step 2: Submit your on-chain proposal using Tally
+### Step 2: Submit your on-chain proposal using the on-chain governance UI
 
-If your wallet can represent at least 1,000,000 tokens, you can create an on-chain proposal using [Tally](https://tally.xyz/gov/arbitrum). 
+If your wallet can represent at least 1,000,000 tokens, you can create an on-chain proposal using the [on-chain governance UI](https://alt.gov.arbitrum.foundation/). 
 
-To submit your proposal on Tally:
+To submit your proposal:
 
 1. Log in to [Tally](https://tally.xyz/gov/arbitrum) using the wallet that represents the $ARB tokens.
 2. Navigate to the "explore DAOs" section or click on "My DAOs" within your Tally profile and select Arbitrum DAO's page.
@@ -77,10 +77,12 @@ To submit your proposal on Tally:
 A proposal passes if two conditions are met: 
 
 1. More votes are cast in favor than against
-2. The total number of votes cast in favor (including abstain votes) is at least the following percentage of the votable tokens:
+2. The total number of votes cast in favor (including abstain votes) is at least the following percentage of the delegated tokens (to learn more about quorum, refer to the[ Constitution)](https://docs.arbitrum.foundation/dao-constitution#section-2-dao-proposals-and-voting-procedures):
 
-   1. **4.5%**, for a <a data-quicklook-from="constitutional-aip">Constitutional AIP</a>
-   2. **3%**, for a <a data-quicklook-from="nonconstitutional-aip">non-Constitutional AIP</a>
+   * 50% (within the range of 150m to 450m $ARB), for a <a data-quicklook-from="constitutional-aip">Constitutional AIP</a>
+   * 40% (within the range of 100m to 300m $ARB), for a <a data-quicklook-from="nonconstitutional-aip">non-Constitutional AIP</a> 
+
+
 
 If the proposal passes, congratulations! After a delay, the proposal’s actions will be executed on-chain[^3].
 
